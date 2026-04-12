@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+requests
+httpx
+beautifulsoup4
+playwright
+edge-tts
+moviepy>=2.1
+Pillow
+groq
+

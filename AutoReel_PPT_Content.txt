@@ -1,0 +1,174 @@
+================================================================================
+                        AutoReel AI — Presentation Deck
+              AI Instagram Reel Ads from Product URLs
+              ACM SIGKDD Atlantis Treasure Hackathon 2025
+================================================================================
+                         TOTAL SLIDES: 6
+================================================================================
+
+================================================================================
+SLIDE 1 — TITLE + THE HOOK
+================================================================================
+
+Title:
+    AutoReel AI
+    "The Autonomous Marketing Agency in a Box"
+
+Subtitle:
+    From Product Link to Viral Reel in 30 Seconds.
+
+Visual Suggestion:
+    - Split screen: Left side shows a boring Amazon product page link.
+      Right side shows a dynamic, viral Instagram Reel playing on a phone.
+    - Clean, vibrant gradient background (Instagram colors: purple/orange).
+
+Opening Statement (Spoken):
+    "Small businesses in India don't fail because they have bad products. 
+     They fail because they can't afford a $1000/month marketing agency to 
+     create engaging content. 
+     Today, attention is the only currency that matters. If you aren't 
+     posting high-quality Reels daily, your brand is invisible."
+
+Core Problem:
+    • Creating 1 video ad takes a human 3 hours (scripting, voiceover, editing).
+    • Small D2C brands (Shopify/Amazon sellers) can't scale their marketing.
+
+Team Name: [Your Team Name]
+Problem Statement: AI Instagram Reel Ads from Product URL
+
+
+================================================================================
+SLIDE 2 — OUR SOLUTION
+================================================================================
+
+Title:
+    Introducing AutoReel AI
+
+One-Liner:
+    "We built an AI agent that turns any standard e-commerce URL into a 
+     fully edited, voice-acted, ready-to-post video ad in under 30 seconds."
+
+What It Actually Does:
+    1. Scrapes the web for product images, pricing, and features.
+    2. Writes a highly-converting viral script tailored to the product.
+    3. Generates human-like voiceover audio.
+    4. Automatically edits the video (adds motion, audio sync, and pop-up subtitles).
+    5. Pushes the final video directly to Instagram Drafts.
+
+The "Anti-Shadowban" Innovation:
+    Most competing tools use official APIs to automatically post videos. 
+    Instagram's algorithm severely punishes (shadowbans) API-posted content.
+    
+    Our Solution: AutoReel uses UI Automation (OpenClaw) to mimic human 
+    clicks and place the video safely into "Drafts". The human simply clicks
+    "Post". Organic reach stays at 100%.
+
+
+================================================================================
+SLIDE 3 — ARCHITECTURE & TECH STACK
+================================================================================
+
+Title:
+    Under the Hood — The Content Pipeline
+
+Tech Stack Table:
+    ┌────────────────────┬─────────────────────────────┬─────────────────────┐
+    │ Component          │ Technology                  │ Function            │
+    ├────────────────────┼─────────────────────────────┼─────────────────────┤
+    │ Data Scraper       │ Playwright / BeautifulSoup  │ Extracts Assets     │
+    │ AI Copywriter      │ Groq (Llama 3 Native)       │ Viral Script Gen    │
+    │ Voice Engine       │ Edge-TTS                    │ Human-Voice Audio   │
+    │ Video Renderer     │ Python (MoviePy)            │ Edits MP4 locally   │
+    │ Distribution Agent │ OpenClaw / UI Automation    │ Instagram Draft push│
+    └────────────────────┴─────────────────────────────┴─────────────────────┘
+
+The Flow (Architectural Diagram to build visually):
+    
+    [ Amazon/Shopify URL ]
+            │
+            ▼
+    [ Content Extraction ] ──► Gets High-Res Images & Features
+            │
+            ▼
+    [ AI Script Writer ] ────► Groq generates 15s Hook & Pitch
+            │
+            ▼
+    [ Audio Synthesis ] ─────► Text converted to dynamic voice
+            │
+            ▼
+    [ Video Compilation ] ───► MoviePy stitches media + adds dynamic subtitles
+            │
+            ▼
+    [ UI Automation ] ───────► Logs in & saves to Instagram Drafts
+
+
+================================================================================
+SLIDE 4 — THE ENGINEERING WOW FACTOR
+================================================================================
+
+Title:
+    Building a Rendering Engine from Scratch
+
+Why this is technically impressive:
+    We did not just plug a URL into an expensive third-party video API like 
+    HeyGen or Runway. We built the video compositor entirely in code.
+
+    • Algorithmic Editing: The Python backend mathematically calculates 
+      audio duration, scales the images, and applies Ken Burns Zoom effects
+      so static pictures look like cinematic video.
+    • Subtitle Synchronization: The hardest part of video AI. We sync words
+      dynamically so they pop on screen exactly as the voiceover speaks them,
+      mimicking the high-retention "TikTok/Reels" style.
+
+    Everything renders locally. It requires zero subscription fees, making
+    it infinitely scalable for a startup.
+
+
+================================================================================
+SLIDE 5 — IMPACT & BUSINESS MODEL
+================================================================================
+
+Title:
+    The Economics of Infinite Content
+
+Market Size:
+    • 10+ million Shopify and D2C brands globally.
+    • The creator economy tools market is worth $100B+.
+
+Cost Comparison:
+    ┌───────────────────────┬──────────────────────┬────────────────────────┐
+    │ Metric                │ Traditional Agency   │ AutoReel AI (Our Tool) │
+    ├───────────────────────┼──────────────────────┼────────────────────────┤
+    │ Cost per Video Ad     │ ₹3000 - ₹5000        │ ₹0.50 (Compute cost)   │
+    │ Time to Create        │ 24 to 72 hours       │ 30 seconds             │
+    │ Output capacity       │ 2-3 ads per week     │ 100+ ads per day       │
+    └───────────────────────┴──────────────────────┴────────────────────────┘
+
+The Business Plan:
+    This is a multi-million dollar SaaS waiting to happen. 
+    Subscription Model: ₹999/month for 50 AI-generated Reels.
+    Target: Local e-commerce sellers in India trying to compete with giants.
+
+
+================================================================================
+SLIDE 6 — LIVE DEMO & CALL TO ACTION
+================================================================================
+
+Title:
+    From Link to Viral — Watch It Live
+
+Live Demo Plan (What you should say/do):
+    "In the next round, we won't just show you code. We will take a live 
+    product link from the jury, feed it into AutoReel AI, and exactly 30 
+    seconds later, show you a fully edited, subtitled video sitting directly 
+    in our Instagram drafts waiting to be posted. 
+    
+    And to prove horizontal impact, we will show you the dummy Shopify 
+    store where that exact reel drove an actual sale."
+
+Closing Line (Keep on slide):
+    "Every product has a market. We just give it a voice."
+
+================================================================================
+END OF PRESENTATION CONTENT
+================================================================================
