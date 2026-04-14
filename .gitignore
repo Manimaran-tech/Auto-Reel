@@ -23,3 +23,9 @@ jobs/
 out.txt
 error.txt
 .playwright/
+
+# Custom Additions
+.venv310/
+.temp/
+models/
+*.mp4

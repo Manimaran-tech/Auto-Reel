@@ -1,0 +1,71 @@
+Slide 1: Title Slide – Problem statement & team details
+
+[Visual suggestion: Project Name (e.g., AutoReel AI) in bold at the center. Team member names below it. A tagline like "Fully Local Automated AI Marketing Pipeline."]
+
+Speaker Script:
+"Hello everyone, today we are presenting AutoReel AI. 
+The problem we are tackling is that creating high-quality, engaging social media marketing videos—especially for platforms like Instagram Reels or TikTok—is time-consuming, expensive, and requires specialized skills in copywriting, voiceover, and video editing. Small businesses and creators often struggle to keep up with the daily volume of content required to stay relevant.
+Our solution is a fully automated, 100% locally-run AI pipeline that takes a simple product link and transforms it into a ready-to-publish marketing video, completely bypassing the need for expensive third-party APIs or human editors."
+
+---
+
+Slide 2: Introduction
+
+[Visual suggestion: A simple diagram showing a product URL going into a "black box" labeled AutoReel, and a polished Reel coming out.]
+
+Speaker Script:
+"To introduce our project: AutoReel AI is an end-to-end automated marketing engine. 
+At its core, it is designed to scrape product data from e-commerce platforms and dynamically generate engaging, viral-style short-form videos. 
+What makes our approach unique is our strict adherence to privacy and cost-efficiency. Our entire pipeline is designed to run locally on our own hardware. We don't rely on paid API keys, and we don't send proprietary product data to cloud-based LLM providers. By housing the brain and the creative engine of this tool entirely on our own machines, we ensure data privacy and zero recurring generation costs."
+
+---
+
+Slide 3: Objective
+
+[Visual suggestion: Bullet points highlighting: 1. Cost Reduction 2. Zero-touch Automation 3. Data Privacy]
+
+Speaker Script:
+"Our primary objectives for this project are threefold:
+First, to democratize video marketing by reducing the cost of video generation to virtually zero.
+Second, to achieve zero-touch automation—meaning a user only needs to paste a product URL, and the system handles the rest: scriptwriting, voiceover, and editing.
+Third, to ensure complete data security and privacy. Because every computation model runs locally, agencies or businesses utilizing our tool never have to worry about their data or campaign strategies being leaked to third-party AI trainers."
+
+---
+
+Slide 4: Methodology / Approach
+
+[Visual suggestion: A layered architectural pipeline moving left to right: Scraping -> NLP Processing -> Local LLM Scripting -> Voice Generation (RVC) -> Python Video Editing.]
+
+Speaker Script:
+"For our methodology, we built a layered, multi-agent pipeline. Let me break down how it works step-by-step:
+1. Data Extraction (Scraping): First, the user provides a product link. Our scraper visits this URL and extracts all relevant HTML metadata—product titles, prices, descriptions, and feature lists.
+2. Metadata Processing: This raw data is cleaned and consolidated, stripping away HTML tags and irrelevant noise to form a concise product context.
+3. Content Generation (Local LLM): We pass this clean context into our own locally hosted Large Language Model. We instruct the LLM using a specialized copywriter system prompt to generate a viral, engaging script, complete with visual cues and a strong call-to-action.
+4. Voice Generation: The generated script is then sent to our local voice synthesis pipeline. We utilize advanced voice cloning and generation models—including Retrieval-based Voice Conversion (RVC)—to create a highly expressive, human-sounding voiceover audio track.
+5. Video Assembly & Editing: Once the audio and text are ready, our Python-based video editing layer (powered by MoviePy) takes over. It stitches together product images, syncs the voiceover audio, burns in dynamic visual subtitles word-by-word, and applies transitions.
+6. Security Layer: Finally, from a security standpoint, because this entire methodology executes locally on the host machine without external API calls, the data in-transit and at-rest remains entirely within the user's isolated environment. Future enhancements will add encryption for stored drafts and secure authentication for the local dashboard."
+
+---
+
+Slide 5: Tools & Technologies
+
+[Visual suggestion: Logos or prominent text indicating: Local LLM/Ollama, RVC (Retrieval-based Voice Conversion), Edge TTS/Python, MoviePy, Beautiful Soup/Scraper.]
+
+Speaker Script:
+"Here is the technology stack that powers our pipeline. We want to emphasize again: everything is processed locally, using our own models. No paid API keys are used anywhere in this flow.
+- For the Brain (LLM): We are running open-weights local Language Models via Ollama. This ensures we get high-level reasoning and scriptwriting capabilities without external dependencies or data leaks.
+- For the Voice: We use a combination of local TTS engines and RVC (Retrieval-based Voice Conversion) models to clone and generate highly engaging, customized voices.
+- For Data Scraping: We rely on robust Python libraries like BeautifulSoup and Requests to parse e-commerce web pages.
+- For Video Rendering: We use Python’s MoviePy library for programmatic video editing, allowing us to build the video frame-by-frame, ensuring perfect audio-subtitle synchronization and vertical 9:16 formatting tailored for platforms like Instagram and TikTok."
+
+---
+
+Slide 6: Expected Outcome / Conclusion
+
+[Visual suggestion: Side-by-side comparison. Left: Hours of manual work = High Cost. Right: AutoReel AI = Minutes, Zero Cost. Big bold "Ready for Publishing".]
+
+Speaker Script:
+"In conclusion, the expected outcome of AutoReel AI is a paradigm shift in how small businesses and creators handle video marketing. 
+We have successfully built a pipeline that reduces hours of manual copywriting, recording, and editing into a process taking just a few minutes of local compute time. 
+The end result is an engaging, viral-ready, vertical MP4 video with dynamic subtitles and AI voiceover, generated continuously, safely, and for free. 
+AutoReel AI proves that powerful, end-to-end automated multimedia marketing does not require expensive cloud subscriptions or sacrificing your data privacy."

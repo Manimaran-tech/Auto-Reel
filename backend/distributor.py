@@ -306,6 +306,10 @@ async def push_to_instagram(
             if not file_input_present:
                 # Check if clicking Create opened a dropdown instead of the dialog
                 post_submenu = await _wait_and_click(page, [
+                    "a span:text-is('Reel')",
+                    "div[role='none'] span:text-is('Reel')",
+                    "//span[text()='Reel']",
+                    "//div[text()='Reel']",
                     "a span:text-is('Post')",
                     "div[role='none'] span:text-is('Post')",
                     "//span[text()='Post']",
@@ -313,7 +317,7 @@ async def push_to_instagram(
                 ], timeout=2000)
                 
                 if post_submenu:
-                    print("  ➡️ Clicked 'Post' from Create submenu")
+                    print("  ➡️ Clicked 'Reel' from Create submenu")
                     await page.wait_for_timeout(1500)
 
             # ── Upload the video file ─────────────────────────────────────
@@ -342,6 +346,25 @@ async def push_to_instagram(
                 if next_visible:
                     break
                 await page.wait_for_timeout(2000)
+
+            # ── Select 9:16 Crop Ratio ────────────────────────────────────
+            print("🔲 Setting crop ratio to 9:16...")
+            crop_btn_clicked = await _wait_and_click(page, [
+                "button[aria-label='Select crop']",
+                "svg[aria-label='Select crop']",
+                "[aria-label='Select crop']"
+            ], timeout=3000)
+            
+            if crop_btn_clicked:
+                await page.wait_for_timeout(1000)
+                await _wait_and_click(page, [
+                    "//span[text()='9:16']",
+                    "//div[text()='9:16']"
+                ], timeout=2000)
+                print("  ➡️ Selected 9:16 crop")
+                await page.wait_for_timeout(1000)
+            else:
+                print("  ⚠️ Crop button not found, assuming default or already 9:16")
 
             # ── Click through Next/Continue buttons to reach caption screen ──
             for step in range(4):

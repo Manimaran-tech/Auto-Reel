@@ -1,0 +1,7 @@
+d:\Hackathon\.venv310\Scripts\python.exe -m uvicorn backend.main:app --host 0.0.0.0 --port 8000
+
+# 1. Navigate to the frontend directory
+cd frontend
+
+# 2. Start the Vite development server
+npm run dev

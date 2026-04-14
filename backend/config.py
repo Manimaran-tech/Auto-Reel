@@ -18,6 +18,7 @@ class Settings:
     groq_api_key: str = os.getenv("GROQ_API_KEY", "")
     pexels_api_key: str = os.getenv("PEXELS_API_KEY", "")
     hf_api_token: str = os.getenv("HF_API_TOKEN", "")
+    nvidia_api_key: str = os.getenv("NVIDIA_API_KEY", "")
     tts_voice: str = os.getenv("TTS_VOICE", "en-US-ChristopherNeural")
     instagram_username: str = os.getenv("INSTAGRAM_USERNAME", "")
     instagram_password: str = os.getenv("INSTAGRAM_PASSWORD", "")

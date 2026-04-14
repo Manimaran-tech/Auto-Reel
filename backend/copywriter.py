@@ -46,40 +46,48 @@ def detect_hook_type(script: str) -> str:
 
 
 def build_prompt(product_data: dict[str, Any], strategy_rule: str) -> str:
+    title = product_data.get("title", "Unknown Product")
     features = ", ".join(product_data.get("features", [])[:5])
+    price = product_data.get("price", "N/A")
     extra_rule = strategy_rule.strip() or "No additional strategy rule."
-    return f"""You are an elite direct-response copywriter specializing in viral TikTok and Instagram Reels.
+    return f"""You are an elite comedy writer for Family Guy and a viral marketing genius.
 
 PRODUCT INFORMATION:
-- Name: {product_data.get("title", "Unknown Product")}
-- Price: {product_data.get("price", "N/A")}
+- Name: {title}
+- Price: {price}
 - Key Features: {features}
 
-CRITICAL STRATEGY TO APPLY FOR THIS VIDEO:
+CRITICAL STRATEGY TO APPLY:
 {extra_rule}
 
 YOUR TASK:
-Write a 30-second Instagram Reel voiceover script and an Instagram caption.
+Write a 30-second viral Instagram Reel script using a dialogue format between Peter Griffin and Stewie Griffin.
 
 SCRIPT RULES:
-1. First sentence MUST be a scroll-stopping hook (question, shock, or bold claim).
-2. Keep it between 80-100 words (this fills exactly 30 seconds when spoken).
-3. Mention the product name and price naturally.
-4. Highlight 3-4 key features with energy.
-5. End with a clear call-to-action.
-6. Use short, punchy sentences.
-7. Sound human, energetic, and persuasive.
+1. Peter MUST start by loudly complaining about a SPECIFIC relatable problem that THIS EXACT PRODUCT solves. DO NOT use generic complaints. The complaint MUST be directly related to "{title}".
+2. Stewie jumps in, roasts Peter hilariously, and pitches the product in a FUNNY and NATURAL way — like a cocky salesman, NOT a boring spec sheet reader.
+3. Peter reacts with skepticism or shock ("Wait, seriously?", "No way that's real").
+4. Stewie aggressively closes with price and WHY the product is amazing (NOT a feature list — sell the FEELING and BENEFIT). Must end with "Get the product link in the bio or below this reel!"
+5. CRITICAL: Stewie should NEVER just list specifications or read a product description. He should SELL with attitude, humor, and personality.
+6. Keep the entire dialogue between 80-100 words total.
+7. The dialogue must be written as a JSON list of objects with "speaker" (either "peter" or "stewie") and "text".
+8. NEVER put hashtags (#) in the dialogue text. Hashtags are ONLY for the caption.
+
+BAD EXAMPLE (DO NOT DO THIS):
+"It has lumbar support, adjustable armrests, breathable mesh fabric, and 360-degree swivel."
+GOOD EXAMPLE (DO THIS):
+"This bad boy hugs your spine like it actually cares about you. Your back pain? Gone. Your excuses? Also gone."
 
 CAPTION RULES:
-1. ONLY talk about the product — its features, benefits, and price.
-2. Max 100 words.
-3. Include 2 relevant emojis.
-4. End with exactly 5 product-relevant hashtags.
-5. Do NOT include generic filler or motivational text — keep it 100% about the product.
+1. Talk directly about the product (Max 50 words).
+2. End with exactly 5 product-relevant hashtags.
 
-OUTPUT FORMAT (respond ONLY with JSON):
+OUTPUT FORMAT (respond ONLY with valid JSON):
 {{
-  "script": "voiceover text",
+  "dialogue": [
+    {{"speaker": "peter", "text": "example complaint about THIS specific product category"}},
+    {{"speaker": "stewie", "text": "example roast + pitch for {title}"}}
+  ],
   "caption": "instagram caption with hashtags"
 }}"""
 
@@ -119,21 +127,22 @@ def _generate_with_groq(prompt: str) -> dict[str, Any]:
     return extract_json(raw_text)
 
 
-def _template_fallback(product_data: dict[str, Any]) -> dict[str, str]:
+def _template_fallback(product_data: dict[str, Any]) -> dict[str, Any]:
     title = product_data.get("title", "this product")
     price = product_data.get("price", "today's deal price")
-    feat = product_data.get("features", ["high quality", "great value", "must-have"])[:3]
-    script = (
-        f"Still using outdated gear? Meet {title}. "
-        f"It gives you {feat[0]}, {feat[1]}, and {feat[2]} for just {price}. "
-        "If you want smarter results without overpaying, grab it now. Link in bio."
-    )
+    feat = product_data.get("features", ["high quality", "great value", "must-have"])[:2]
+    
+    dialogue = [
+        {"speaker": "peter", "text": f"Aw geez Lois, I'm so done with this! I need a proper {title.split()[0].lower()} situation before I lose my mind!"},
+        {"speaker": "stewie", "text": f"Stop whining, fat man. The {title} exists and it's about to change your miserable life."},
+        {"speaker": "peter", "text": "Wait, seriously? Is it actually good or are you messing with me again?"},
+        {"speaker": "stewie", "text": f"It's only {price} and honestly, it feels like it costs way more. Your life upgrades TODAY. Get the product link in the bio or below this reel!"}
+    ]
     caption = (
-        f"Quick upgrade alert for your daily routine: {title} at {price}. "
-        "Built for real results and ready to ship. 🚀🔥 "
-        "#musthave #smartbuy #shoppingfinds #dealoftheday #reelshopping"
+        f"Quick upgrade alert! {title} at {price}. "
+        "#musthave #familyguy #shoppingfinds #dealoftheday #reelshopping"
     )
-    return {"script": script, "caption": caption}
+    return {"dialogue": dialogue, "caption": caption}
 
 
 def generate_script(product_data: dict[str, Any], strategy_rule: str = "") -> dict[str, Any]:
@@ -143,14 +152,16 @@ def generate_script(product_data: dict[str, Any], strategy_rule: str = "") -> di
     for generator in (_generate_with_ollama, _generate_with_groq):
         try:
             result = generator(prompt)
-            script = (result.get("script") or "").strip()
+            dialogue = result.get("dialogue")
             caption = (result.get("caption") or "").strip()
-            if script and caption:
-                return {"script": script, "caption": caption, "hook_type": detect_hook_type(script)}
+            if dialogue and isinstance(dialogue, list) and caption:
+                first_text = dialogue[0].get("text", "")
+                return {"dialogue": dialogue, "caption": caption, "hook_type": detect_hook_type(first_text)}
         except Exception as exc:
             errors.append(str(exc))
 
     fallback = _template_fallback(product_data)
-    fallback["hook_type"] = detect_hook_type(fallback["script"])
+    first_text = fallback["dialogue"][0]["text"]
+    fallback["hook_type"] = detect_hook_type(first_text)
     fallback["generator_errors"] = errors
     return fallback
