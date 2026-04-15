@@ -11,8 +11,8 @@ from backend.distributor import push_to_instagram_draft, check_session
 # ── Config ────────────────────────────────────────────────────
 USERNAME = "product.trend_tester"
 PASSWORD = ""  # Not needed — we use the saved session
-VIDEO_PATH = r"D:\Hackathon\output\jobs\14eb0817fa\final_reel.mp4"
-CAPTION = "Experience the future of audio with Apple AirPods Pro 3! Active Noise Cancellation, Spatial Audio, and heart rate sensing. Get yours for ₹24,900. #AppleAirPodsPro3 #ActiveNoiseCancellation #SpatialAudio #FitnessEarbuds"
+VIDEO_PATH = r"D:\Hackathon\output\jobs\49f0a0ed61\final_reel.mp4"
+CAPTION = "Experience the future of audio with Apple AirPods Pro 3! Active Noise Cancellation, Spatial Audio, and heart rate sensing. Get yours for $300.00. #AppleAirPodsPro3 #ActiveNoiseCancellation #SpatialAudio #FitnessEarbuds"
 PRODUCT_URL = "https://amzn.to/4233hny"
 
 

@@ -374,10 +374,10 @@ async def push_to_instagram(
                     "[role='button']:has-text('Next')",
                     "//div[text()='Continue']",
                     "button:has-text('Continue')",
-                ], timeout=5000)
+                ], timeout=2000)
                 if clicked:
                     print(f"  ➡️ Clicked Next (step {step + 1})")
-                    await page.wait_for_timeout(2500)
+                    await page.wait_for_timeout(800)
                 else:
                     break
 
@@ -393,6 +393,27 @@ async def push_to_instagram(
 
             await page.wait_for_timeout(1500)
 
+            # ── Add Location (Quick First Result) ───────────────────────────
+            print("📍 Adding location...")
+            location_input_clicked = await _wait_and_click(page, [
+                "input[placeholder='Add location']",
+                "input[aria-label='Add location']",
+                "//div[contains(text(), 'Add location')]/following-sibling::div//input"
+            ], timeout=800)
+            
+            if location_input_clicked:
+                await page.keyboard.insert_text("America")
+                await page.wait_for_timeout(500) # Short wait for dropdown to populate
+                # Click the New York dropdown explicitly
+                await _wait_and_click(page, [
+                    "//span[contains(text(), 'New York')]",
+                    "//div[contains(text(), 'New York')]",
+                    "text=New York"
+                ], timeout=800)
+                print("  ✅ Location set instantly")
+            else:
+                print("  ⚠️ Location field not found...")
+
             # ── STRATEGY: Post directly first, Draft as fallback ──────────
             print("🚀 Attempting to post reel...")
 
@@ -405,7 +426,7 @@ async def push_to_instagram(
                 "div:text-is('Share')",
                 "//div[text()='Post']",
                 "button:has-text('Post')",
-            ], timeout=8000)
+            ], timeout=400)
 
             if share_clicked:
                 print("✅ Clicked Share — posting reel!")
@@ -517,16 +538,14 @@ async def _fill_caption(page, caption: str) -> bool:
         "div[aria-label='Write a caption...']",
         "textarea[aria-label='Write a caption...']",
         "div[role='textbox']",
-        "textarea",
         "[contenteditable='true']",
     ]
     for selector in caption_selectors:
         try:
             loc = page.locator(selector).first
-            if await loc.is_visible(timeout=2000):
+            if await loc.is_visible(timeout=300):
                 await loc.click()
-                await page.wait_for_timeout(300)
-                await page.keyboard.type(caption, delay=10)
+                await page.keyboard.insert_text(caption) # instant paste instead of typing
                 print("  ✅ Caption added!")
                 return True
         except Exception:

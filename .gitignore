@@ -13,13 +13,11 @@ dist/
 .DS_Store
 
 # Output folders with heavy files and login sessions!
-output/
 ig_session/
 ig_debug/
 jobs/
 
 # Agent/AI data
-.agents/
 out.txt
 error.txt
 .playwright/
@@ -27,5 +25,4 @@ error.txt
 # Custom Additions
 .venv310/
 .temp/
-models/
 

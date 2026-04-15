@@ -48,7 +48,21 @@ def detect_hook_type(script: str) -> str:
 def build_prompt(product_data: dict[str, Any], strategy_rule: str) -> str:
     title = product_data.get("title", "Unknown Product")
     features = ", ".join(product_data.get("features", [])[:5])
-    price = product_data.get("price", "N/A")
+    raw_price = str(product_data.get("price", "N/A"))
+    
+    # Simple conversion: detect INR and convert to USD
+    price = raw_price
+    if any(sym in raw_price for sym in ["₹", "Rs", "INR"]):
+        try:
+            # Extract numeric value
+            nums = re.findall(r"[\d,.]+", raw_price)
+            if nums:
+                val = float(nums[0].replace(",", ""))
+                usd_val = round(val / 83.0, 2)
+                price = f"${usd_val}"
+        except Exception:
+            pass
+            
     extra_rule = strategy_rule.strip() or "No additional strategy rule."
     return f"""You are an elite comedy writer for Family Guy and a viral marketing genius.
 
@@ -67,7 +81,7 @@ SCRIPT RULES:
 1. Peter MUST start by loudly complaining about a SPECIFIC relatable problem that THIS EXACT PRODUCT solves. DO NOT use generic complaints. The complaint MUST be directly related to "{title}".
 2. Stewie jumps in, roasts Peter hilariously, and pitches the product in a FUNNY and NATURAL way — like a cocky salesman, NOT a boring spec sheet reader.
 3. Peter reacts with skepticism or shock ("Wait, seriously?", "No way that's real").
-4. Stewie aggressively closes with price and WHY the product is amazing (NOT a feature list — sell the FEELING and BENEFIT). Must end with "Get the product link in the bio or below this reel!"
+4. Stewie aggressively closes with price (ensure to explicitly say 'dollars' if giving a number) and WHY the product is amazing (NOT a feature list — sell the FEELING and BENEFIT). Must end with "Get the product link in the bio or below this reel!"
 5. CRITICAL: Stewie should NEVER just list specifications or read a product description. He should SELL with attitude, humor, and personality.
 6. Keep the entire dialogue between 80-100 words total.
 7. The dialogue must be written as a JSON list of objects with "speaker" (either "peter" or "stewie") and "text".
@@ -127,9 +141,8 @@ def _generate_with_groq(prompt: str) -> dict[str, Any]:
     return extract_json(raw_text)
 
 
-def _template_fallback(product_data: dict[str, Any]) -> dict[str, Any]:
+def _template_fallback(product_data: dict[str, Any], price: Any) -> dict[str, Any]:
     title = product_data.get("title", "this product")
-    price = product_data.get("price", "today's deal price")
     feat = product_data.get("features", ["high quality", "great value", "must-have"])[:2]
     
     dialogue = [
@@ -147,6 +160,16 @@ def _template_fallback(product_data: dict[str, Any]) -> dict[str, Any]:
 
 def generate_script(product_data: dict[str, Any], strategy_rule: str = "") -> dict[str, Any]:
     prompt = build_prompt(product_data, strategy_rule)
+    
+    # Extract the converted price for use in fallback if needed
+    price = product_data.get("price", "N/A")
+    raw_price = str(price)
+    if any(sym in raw_price for sym in ["₹", "Rs", "INR"]):
+        try:
+            nums = re.findall(r"[\d,.]+", raw_price)
+            if nums:
+                price = f"${round(float(nums[0].replace(',', '')) / 83.0, 2)}"
+        except: pass
 
     errors: list[str] = []
     for generator in (_generate_with_ollama, _generate_with_groq):
@@ -160,7 +183,7 @@ def generate_script(product_data: dict[str, Any], strategy_rule: str = "") -> di
         except Exception as exc:
             errors.append(str(exc))
 
-    fallback = _template_fallback(product_data)
+    fallback = _template_fallback(product_data, price)
     first_text = fallback["dialogue"][0]["text"]
     fallback["hook_type"] = detect_hook_type(first_text)
     fallback["generator_errors"] = errors

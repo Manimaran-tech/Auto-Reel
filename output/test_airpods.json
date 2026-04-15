@@ -1,0 +1,548 @@
+[
+  {
+    "start": 0.1,
+    "end": 0.43858333333333344,
+    "text": "Ugh",
+    "speaker": "peter"
+  },
+  {
+    "start": 0.43858333333333344,
+    "end": 0.7771666666666668,
+    "text": "my",
+    "speaker": "peter"
+  },
+  {
+    "start": 0.7771666666666668,
+    "end": 1.1157500000000002,
+    "text": "old",
+    "speaker": "peter"
+  },
+  {
+    "start": 1.1157500000000002,
+    "end": 1.4543333333333337,
+    "text": "earbuds",
+    "speaker": "peter"
+  },
+  {
+    "start": 1.4543333333333337,
+    "end": 1.7929166666666672,
+    "text": "keep",
+    "speaker": "peter"
+  },
+  {
+    "start": 1.7929166666666672,
+    "end": 2.1315000000000004,
+    "text": "falling",
+    "speaker": "peter"
+  },
+  {
+    "start": 2.1315000000000004,
+    "end": 2.470083333333334,
+    "text": "out",
+    "speaker": "peter"
+  },
+  {
+    "start": 2.470083333333334,
+    "end": 2.8086666666666673,
+    "text": "of",
+    "speaker": "peter"
+  },
+  {
+    "start": 2.8086666666666673,
+    "end": 3.1472500000000005,
+    "text": "my",
+    "speaker": "peter"
+  },
+  {
+    "start": 3.1472500000000005,
+    "end": 3.4858333333333342,
+    "text": "ears",
+    "speaker": "peter"
+  },
+  {
+    "start": 3.4858333333333342,
+    "end": 3.8244166666666675,
+    "text": "during",
+    "speaker": "peter"
+  },
+  {
+    "start": 3.8244166666666675,
+    "end": 4.163,
+    "text": "podcasts!",
+    "speaker": "peter"
+  },
+  {
+    "start": 4.113,
+    "end": 4.654666666666667,
+    "text": "Can't",
+    "speaker": "peter"
+  },
+  {
+    "start": 4.654666666666667,
+    "end": 5.1963333333333335,
+    "text": "stand",
+    "speaker": "peter"
+  },
+  {
+    "start": 5.1963333333333335,
+    "end": 5.738,
+    "text": "it!",
+    "speaker": "peter"
+  },
+  {
+    "start": 5.8999999999999995,
+    "end": 6.301818181818182,
+    "text": "Oh",
+    "speaker": "stewie"
+  },
+  {
+    "start": 6.301818181818182,
+    "end": 6.703636363636363,
+    "text": "great",
+    "speaker": "stewie"
+  },
+  {
+    "start": 6.703636363636363,
+    "end": 7.1054545454545455,
+    "text": "Peter",
+    "speaker": "stewie"
+  },
+  {
+    "start": 7.1054545454545455,
+    "end": 7.507272727272727,
+    "text": "now",
+    "speaker": "stewie"
+  },
+  {
+    "start": 7.507272727272727,
+    "end": 7.909090909090908,
+    "text": "you're",
+    "speaker": "stewie"
+  },
+  {
+    "start": 7.909090909090908,
+    "end": 8.31090909090909,
+    "text": "experiencing",
+    "speaker": "stewie"
+  },
+  {
+    "start": 8.31090909090909,
+    "end": 8.712727272727273,
+    "text": "the",
+    "speaker": "stewie"
+  },
+  {
+    "start": 8.712727272727273,
+    "end": 9.114545454545453,
+    "text": "thrill",
+    "speaker": "stewie"
+  },
+  {
+    "start": 9.114545454545453,
+    "end": 9.516363636363636,
+    "text": "of",
+    "speaker": "stewie"
+  },
+  {
+    "start": 9.516363636363636,
+    "end": 9.918181818181818,
+    "text": "amateur",
+    "speaker": "stewie"
+  },
+  {
+    "start": 9.918181818181818,
+    "end": 10.32,
+    "text": "hour",
+    "speaker": "stewie"
+  },
+  {
+    "start": 10.27,
+    "end": 10.62225,
+    "text": "Introducing",
+    "speaker": "stewie"
+  },
+  {
+    "start": 10.62225,
+    "end": 10.974499999999999,
+    "text": "AirPods",
+    "speaker": "stewie"
+  },
+  {
+    "start": 10.974499999999999,
+    "end": 11.32675,
+    "text": "Gen",
+    "speaker": "stewie"
+  },
+  {
+    "start": 11.32675,
+    "end": 11.678999999999998,
+    "text": "3",
+    "speaker": "stewie"
+  },
+  {
+    "start": 11.678999999999998,
+    "end": 12.03125,
+    "text": "-",
+    "speaker": "stewie"
+  },
+  {
+    "start": 12.03125,
+    "end": 12.3835,
+    "text": "sweat",
+    "speaker": "stewie"
+  },
+  {
+    "start": 12.3835,
+    "end": 12.73575,
+    "text": "and",
+    "speaker": "stewie"
+  },
+  {
+    "start": 12.73575,
+    "end": 13.088000000000001,
+    "text": "water",
+    "speaker": "stewie"
+  },
+  {
+    "start": 13.088000000000001,
+    "end": 13.440249999999999,
+    "text": "resistant",
+    "speaker": "stewie"
+  },
+  {
+    "start": 13.440249999999999,
+    "end": 13.7925,
+    "text": "so",
+    "speaker": "stewie"
+  },
+  {
+    "start": 13.7925,
+    "end": 14.144750000000002,
+    "text": "you",
+    "speaker": "stewie"
+  },
+  {
+    "start": 14.144750000000002,
+    "end": 14.497,
+    "text": "can",
+    "speaker": "stewie"
+  },
+  {
+    "start": 14.497,
+    "end": 14.849250000000001,
+    "text": "rage",
+    "speaker": "stewie"
+  },
+  {
+    "start": 14.849250000000001,
+    "end": 15.2015,
+    "text": "on",
+    "speaker": "stewie"
+  },
+  {
+    "start": 15.2015,
+    "end": 15.55375,
+    "text": "without",
+    "speaker": "stewie"
+  },
+  {
+    "start": 15.55375,
+    "end": 15.906000000000002,
+    "text": "worrying",
+    "speaker": "stewie"
+  },
+  {
+    "start": 15.906000000000002,
+    "end": 16.25825,
+    "text": "about",
+    "speaker": "stewie"
+  },
+  {
+    "start": 16.25825,
+    "end": 16.610500000000002,
+    "text": "your",
+    "speaker": "stewie"
+  },
+  {
+    "start": 16.610500000000002,
+    "end": 16.96275,
+    "text": "precious",
+    "speaker": "stewie"
+  },
+  {
+    "start": 16.96275,
+    "end": 17.315,
+    "text": "earbuds!",
+    "speaker": "stewie"
+  },
+  {
+    "start": 17.400000000000002,
+    "end": 18.3975,
+    "text": "Wait",
+    "speaker": "peter"
+  },
+  {
+    "start": 18.3975,
+    "end": 19.395,
+    "text": "seriously?",
+    "speaker": "peter"
+  },
+  {
+    "start": 19.345,
+    "end": 19.660666666666668,
+    "text": "You",
+    "speaker": "peter"
+  },
+  {
+    "start": 19.660666666666668,
+    "end": 19.976333333333333,
+    "text": "expect",
+    "speaker": "peter"
+  },
+  {
+    "start": 19.976333333333333,
+    "end": 20.292,
+    "text": "me",
+    "speaker": "peter"
+  },
+  {
+    "start": 20.292,
+    "end": 20.607666666666667,
+    "text": "to",
+    "speaker": "peter"
+  },
+  {
+    "start": 20.607666666666667,
+    "end": 20.923333333333336,
+    "text": "believe",
+    "speaker": "peter"
+  },
+  {
+    "start": 20.923333333333336,
+    "end": 21.239,
+    "text": "those",
+    "speaker": "peter"
+  },
+  {
+    "start": 21.239,
+    "end": 21.55466666666667,
+    "text": "things",
+    "speaker": "peter"
+  },
+  {
+    "start": 21.55466666666667,
+    "end": 21.870333333333335,
+    "text": "are",
+    "speaker": "peter"
+  },
+  {
+    "start": 21.870333333333335,
+    "end": 22.186,
+    "text": "true?",
+    "speaker": "peter"
+  },
+  {
+    "start": 22.32,
+    "end": 22.971333333333334,
+    "text": "Trust",
+    "speaker": "stewie"
+  },
+  {
+    "start": 22.971333333333334,
+    "end": 23.622666666666664,
+    "text": "me",
+    "speaker": "stewie"
+  },
+  {
+    "start": 23.622666666666664,
+    "end": 24.273999999999997,
+    "text": "Peter",
+    "speaker": "stewie"
+  },
+  {
+    "start": 24.224,
+    "end": 24.544666666666664,
+    "text": "You'll",
+    "speaker": "stewie"
+  },
+  {
+    "start": 24.544666666666664,
+    "end": 24.865333333333332,
+    "text": "be",
+    "speaker": "stewie"
+  },
+  {
+    "start": 24.865333333333332,
+    "end": 25.186,
+    "text": "hooked",
+    "speaker": "stewie"
+  },
+  {
+    "start": 25.186,
+    "end": 25.506666666666664,
+    "text": "from",
+    "speaker": "stewie"
+  },
+  {
+    "start": 25.506666666666664,
+    "end": 25.827333333333332,
+    "text": "the",
+    "speaker": "stewie"
+  },
+  {
+    "start": 25.827333333333332,
+    "end": 26.148,
+    "text": "first",
+    "speaker": "stewie"
+  },
+  {
+    "start": 26.148,
+    "end": 26.468666666666664,
+    "text": "force",
+    "speaker": "stewie"
+  },
+  {
+    "start": 26.468666666666664,
+    "end": 26.78933333333333,
+    "text": "sensor",
+    "speaker": "stewie"
+  },
+  {
+    "start": 26.78933333333333,
+    "end": 27.11,
+    "text": "tap",
+    "speaker": "stewie"
+  },
+  {
+    "start": 27.11,
+    "end": 27.44272727272727,
+    "text": "Your",
+    "speaker": "stewie"
+  },
+  {
+    "start": 27.44272727272727,
+    "end": 27.775454545454544,
+    "text": "excuses",
+    "speaker": "stewie"
+  },
+  {
+    "start": 27.775454545454544,
+    "end": 28.10818181818182,
+    "text": "will",
+    "speaker": "stewie"
+  },
+  {
+    "start": 28.10818181818182,
+    "end": 28.440909090909088,
+    "text": "be",
+    "speaker": "stewie"
+  },
+  {
+    "start": 28.440909090909088,
+    "end": 28.773636363636363,
+    "text": "gone",
+    "speaker": "stewie"
+  },
+  {
+    "start": 28.773636363636363,
+    "end": 29.106363636363636,
+    "text": "and",
+    "speaker": "stewie"
+  },
+  {
+    "start": 29.106363636363636,
+    "end": 29.439090909090908,
+    "text": "so",
+    "speaker": "stewie"
+  },
+  {
+    "start": 29.439090909090908,
+    "end": 29.771818181818183,
+    "text": "will",
+    "speaker": "stewie"
+  },
+  {
+    "start": 29.771818181818183,
+    "end": 30.104545454545452,
+    "text": "your",
+    "speaker": "stewie"
+  },
+  {
+    "start": 30.104545454545452,
+    "end": 30.437272727272727,
+    "text": "back",
+    "speaker": "stewie"
+  },
+  {
+    "start": 30.437272727272727,
+    "end": 30.77,
+    "text": "pain!",
+    "speaker": "stewie"
+  },
+  {
+    "start": 30.77,
+    "end": 31.057181818181817,
+    "text": "Get",
+    "speaker": "stewie"
+  },
+  {
+    "start": 31.057181818181817,
+    "end": 31.344363636363635,
+    "text": "the",
+    "speaker": "stewie"
+  },
+  {
+    "start": 31.344363636363635,
+    "end": 31.631545454545453,
+    "text": "product",
+    "speaker": "stewie"
+  },
+  {
+    "start": 31.631545454545453,
+    "end": 31.918727272727274,
+    "text": "link",
+    "speaker": "stewie"
+  },
+  {
+    "start": 31.918727272727274,
+    "end": 32.20590909090909,
+    "text": "in",
+    "speaker": "stewie"
+  },
+  {
+    "start": 32.20590909090909,
+    "end": 32.49309090909091,
+    "text": "the",
+    "speaker": "stewie"
+  },
+  {
+    "start": 32.49309090909091,
+    "end": 32.780272727272724,
+    "text": "bio",
+    "speaker": "stewie"
+  },
+  {
+    "start": 32.780272727272724,
+    "end": 33.067454545454545,
+    "text": "or",
+    "speaker": "stewie"
+  },
+  {
+    "start": 33.067454545454545,
+    "end": 33.35463636363636,
+    "text": "below",
+    "speaker": "stewie"
+  },
+  {
+    "start": 33.35463636363636,
+    "end": 33.64181818181818,
+    "text": "this",
+    "speaker": "stewie"
+  },
+  {
+    "start": 33.64181818181818,
+    "end": 33.929,
+    "text": "reel!",
+    "speaker": "stewie"
+  }
+]
